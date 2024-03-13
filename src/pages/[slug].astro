@@ -18,6 +18,8 @@ interface Post {
 }
 const {slug} = Astro.params;
 const post = await getEntry('posts', slug);
+const { Content, headings, remarkPluginFrontmatter } = await post.render()
+
 ---
 <Layout title={post.data.title}>
 <div class='mb-12'>
@@ -49,7 +51,7 @@ const post = await getEntry('posts', slug);
               <div
               class="prose dark:prose-dark max-w-none w-full"
               >
-                {post.body}
+                <Content />
             </div>
           </div>
        

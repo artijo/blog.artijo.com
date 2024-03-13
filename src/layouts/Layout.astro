@@ -26,3 +26,20 @@ const { title } = Astro.props;
 		</main>
 	</body>
 </html>
+
+<style is:global>
+	@tailwind base;
+@tailwind components;
+@tailwind utilities;
+	@media (max-width: 767px) {
+  .nav-open #nav {
+    max-height: 100vh;
+  }
+  .nav-open .i-close {
+    opacity: 1;
+  }
+  .nav-open .i-open {
+    opacity: 0;
+  }
+}
+</style>

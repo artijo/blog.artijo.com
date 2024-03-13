@@ -34,6 +34,12 @@ export default defineConfig({
         path: "src/content/posts",
         fields: [
           {
+            name: "thumbnail",
+            label: "Thumbnail",
+            type: "image",
+            required: true,
+          },
+          {
             type: "string",
             name: "title",
             label: "Title",

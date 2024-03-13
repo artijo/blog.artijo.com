@@ -1,0 +1,22 @@
+---
+const { feature_image, title, slug } = Astro.props
+---
+<article
+class='overflow-hidden rounded-md bg-white shadow-sm dark:bg-slate-800 mx-auto w-full'
+>
+<a href={`/${slug}`}>
+  <img
+    src={feature_image}
+    alt={title}
+    width={360}
+    height={189}
+    class='aspect-[120/63] w-full object-cover'
+  />
+</a>
+<div class='p-4'>
+  <h3 class='mb-3 text-xl font-bold dark:text-white'>
+    <a href={`/${slug}`}>{title}</a>
+  </h3>
+
+</div>
+</article>

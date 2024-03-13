@@ -1,21 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { getCollection, getEntry } from 'astro:content';
-
-const posts = await getCollection('posts');
-
-export async function getStaticPaths({ paginate }: any) {
-  const posts = await getCollection('posts');
-  // Return a paginated collection of paths for all posts
-  return paginate(posts, { pageSize: 10 });
-}
-
-const {page} = Astro.props;
+import Archive from '../components/Archive.astro';
+import Header from '../components/Header.astro';
 ---
 
 <Layout title="Welcome to Astro.">
-	<main>
-		
-	</main>
+		<h2 class="text-3xl font-bold text-center pb-[16px]">บันทึกของไอ้อาร์ต</h2>
+		<Archive  />
 </Layout>
 

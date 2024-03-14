@@ -27,8 +27,12 @@ const nav = [
           class='relative h-6 w-6 md:hidden'
           title='Toggle Menu'
         >
-          <Menu class='i-open pointer-events-none absolute  top-0 transition-all' />
-          <X class='i-close pointer-events-none absolute top-0 opacity-0 transition-all' />
+        <div class='i-open pointer-events-none absolute  top-0 transition-all'>
+          <Menu />
+        </div>
+        <div class='i-close pointer-events-none absolute top-0 opacity-0 transition-all'>
+          <X />
+        </div>
         </button>
       </div>
       <div

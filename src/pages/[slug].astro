@@ -8,17 +8,9 @@ export async function getStaticPaths() {
   return posts.map((post) => ({ params: { slug: post.slug } }));
 }
 
-interface Post {
-  data: {
-    title: string;
-    posted: string;
-    thumbnail: string;
-  };
-  body: string;
-}
 const {slug} = Astro.params;
 const post = await getEntry('posts', slug);
-const { Content, headings, remarkPluginFrontmatter } = await post.render()
+const { Content } = await post.render()
 
 ---
 <Layout title={post.data.title}>

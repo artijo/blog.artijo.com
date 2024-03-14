@@ -1,0 +1,41 @@
+---
+interface Pagination {
+  page: number;
+  pages: number;
+  next: string | undefined;
+  previous: string | undefined;
+}
+const {page, pages, next, previous}: Pagination = Astro.props as Pagination;
+---
+
+<nav aria-label="Page navigation example" class="mt-10">
+    <ul class="list-style-none flex justify-center">
+        <li>
+            <a
+                class="relative block rounded-full bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-black dark:hover:bg-neutral-700 dark:hover:text-white"
+                {...previous ? {href: `${previous}`} : {href: "#!"}}
+                >
+                  Previous
+              </a>
+        </li>
+        {
+          Array.from({length: pages}, (_, i) => {
+            return (
+              <li>
+                <a
+                    class={`relative block rounded-full bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-black dark:hover:bg-neutral-700 dark:hover:text-white ${page === i + 1 ? 'bg-primary-100 text-primary-700' : ''}`}
+                    href={`./${i + 1}`}>{i + 1}</a>
+              </li>
+            );
+          })
+        }
+          <li>
+              <a
+                  class="relative block rounded-full bg-transparent px-3 py-1.5 text-sm text-neutral-600 transition-all duration-300 hover:bg-neutral-100 dark:text-black dark:hover:bg-neutral-700 dark:hover:text-white"
+                  {...next ? {href: `${next}`} : {href: "#!"}}
+                  >
+                      Next
+                  </a>
+          </li>
+    </ul>
+</nav>

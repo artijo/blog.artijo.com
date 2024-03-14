@@ -1,12 +1,15 @@
 ---
-import Card from './Card.astro'
+import Card from '../../components/Card.astro'
+import Layout from '../../layouts/Layout.astro'
 import { getCollection} from 'astro:content';
+import Pagination from '../../components/pagination.astro';
 
 
-export const getStaticPaths = (async ({ paginate }: { paginate: any }) => {
+
+export const getStaticPaths = (async ({ paginate }) => {
     let posts = await getCollection('posts');
     posts.sort((a: any, b: any) => new Date(b.data.posted).getTime() - new Date(a.data.posted).getTime());
-    return paginate(posts, {pageSize: 3});
+    return paginate(posts, {pageSize: 9});
 });
 
 interface Page {
@@ -26,13 +29,14 @@ interface Page {
 
 const { page }: { page: Page } = Astro.props;
 
-
-
-
 ---
 
+<Layout title=`หน้า ${page.currentPage} | ARTIJO • BLOG - บันทึกของไอ้อาร์ต`>
+    <h2 class="text-3xl font-bold text-center pb-[16px]">หน้า {page.currentPage}</h2>
 <div class="px-[16px] mx-auto grid  max-w-[1120px] grid-cols-1 gap-4 md:grid-cols-2 md:gap-5 lg:grid-cols-3">
     {page.data.map((post: any) => (
               <Card slug={post.slug} feature_image={post.data.thumbnail} title={post.data.title} />
     ))}
 </div>
+<Pagination page={page.currentPage} pages={page.lastPage} previous={page.url.prev} next={page.url.next} />
+</Layout>

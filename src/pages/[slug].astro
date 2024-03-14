@@ -13,7 +13,7 @@ const post = await getEntry('posts', slug);
 const { Content } = await post.render()
 
 ---
-<Layout title=`${post.data.title} | ARTIJO • BLOG - บันทึกของไอ้อาร์ต`>
+<Layout title=`${post.data.title} | ARTIJO • BLOG - บันทึกของไอ้อาร์ต` url=`https://blog.artijo.com/${slug}` image={post.data.thumbnail}>
 <div class='mb-12'>
     <div class='mx-auto max-w-7xl px-5 lg:px-8'>
       <div class='mx-auto max-w-2xl lg:text-center'>

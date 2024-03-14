@@ -16,6 +16,8 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<link rel="stylesheet" href="fonts/LineSeed/font.css">
+		<link rel="stylesheet" href="fonts/chulabhornlikit/font.css">
 		<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "51cf8f0dbaf24352b7c100ce69ec7414"}'></script>
 		<script lang="js" src="js/nav.js"></script>
 	</head>
@@ -33,10 +35,11 @@ const { title } = Astro.props;
 	@tailwind utilities;
 
 	body {
-  font-family: var(--font-clulabhornlikit);
+  font-family: 'chulabhornlikit', sans-serif;
 }
  
 h1, h2, h3, h4, h5, h6 {
+	font-family: 'lineseed', sans-serif;
   font-weight: 700;
 }
 h1 {

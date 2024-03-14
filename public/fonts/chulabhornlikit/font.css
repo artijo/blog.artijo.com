@@ -1,0 +1,20 @@
+/*
+	Font Name: chulabhornlikit
+	Weights: 400, 700
+*/
+
+@font-face {
+    font-family: 'chulabhornlikit';
+    src: url('chulabhornlikittext-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'chulabhornlikit';
+    src: url('chulabhornlikittext-bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: fallback;
+}

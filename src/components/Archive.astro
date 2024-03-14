@@ -3,6 +3,7 @@ import Card from './Card.astro'
 import { getCollection} from 'astro:content';
 
 const posts = await getCollection('posts');
+posts.sort((a: any, b: any) => new Date(b.data.posted).getTime() - new Date(a.data.posted).getTime());
 
 // export async function getStaticPaths({ paginate }: any) {
 //   const posts = await getCollection('posts');

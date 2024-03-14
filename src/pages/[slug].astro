@@ -13,7 +13,7 @@ const post = await getEntry('posts', slug);
 const { Content } = await post.render()
 
 ---
-<Layout title={post.data.title}>
+<Layout title=`${post.data.title} | ARTIJO • BLOG - บันทึกของไอ้อาร์ต`>
 <div class='mb-12'>
     <div class='mx-auto max-w-7xl px-5 lg:px-8'>
       <div class='mx-auto max-w-2xl lg:text-center'>
@@ -31,7 +31,7 @@ const { Content } = await post.render()
           {post.data.title}
         </h2>
         <p class='text-base text-gray-600 dark:text-gray-400'>
-          {new Date(post.data.posted).toLocaleDateString()}
+          {new Date(post.data.posted).toLocaleDateString('en-US',{ day: '2-digit', month: '2-digit', year: 'numeric' })}
         </p>
       </div>
     </div>

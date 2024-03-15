@@ -2,6 +2,7 @@
 import Menu from './ui/Menu.astro'
 import X from './ui/X.astro'
 import Nav from './Nav.astro';
+import Mode from './Mode.astro';
 
 const nav = [
     { name: 'Privacy Policy', link: 'https://privacy.artijo.com' },
@@ -41,6 +42,7 @@ const nav = [
       >
         <div class='mb-4 mt-2 flex flex-col gap-x-0 gap-y-4 md:my-0 md:mt-0 md:flex-row md:items-center md:justify-end md:gap-x-7 md:gap-y-0 md:pl-8 '>
           <Nav nav={nav} />
+          <Mode />
         </div>
       </div>
     </nav>

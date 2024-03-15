@@ -1,5 +1,6 @@
 ---
 import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 interface Props {
 	title?: string;
 	description?: string;
@@ -46,11 +47,12 @@ const {
 		<meta name="twitter:image" content={image}>
 		<meta name="google-site-verification" content="3EHPc2mN0TiOKbyCWqJiXQDwuuhQchyiT-OMceoKRng">
 	</head>
-	<body class="min-h-screen bg-slate-100 antialiased">
-		<main class="lg:pt-[100px] pt-[90px] md:pt-[120px] sm:px-[16px] pb-[90px]">
-			<Header /> 
+	<body class="min-h-screen bg-slate-100 antialiased relative">
+		<Header /> 
+		<main class="lg:pt-[100px] pt-[90px] md:pt-[120px] sm:px-[16px] pb-[125px] sm:pb-[90px]">
 			<slot />
 		</main>
+		<Footer />
 	</body>
 </html>
 
@@ -127,6 +129,9 @@ cite {
   font-weight: 700;
   overflow-wrap: break-word;
   width: 100%;
+}
+svg {
+	fill: currentColor;
 }
 	@media (max-width: 767px) {
   .nav-open #nav {

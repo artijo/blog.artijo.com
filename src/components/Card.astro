@@ -1,11 +1,12 @@
 ---
+import { Image } from 'astro:assets';
 const { feature_image, title, slug } = Astro.props
 ---
 <article
 class='overflow-hidden rounded-md bg-white shadow-sm dark:bg-slate-800 mx-auto w-full'
 >
 <a href={`/${slug}`}>
-  <img
+  <Image
     src={feature_image}
     alt={title}
     width={360}

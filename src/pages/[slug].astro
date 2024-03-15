@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro'
 import { getCollection } from 'astro:content';
 import { getEntry } from 'astro:content';
+import { Image } from 'astro:assets';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
@@ -20,7 +21,7 @@ const { Content } = await post.render()
         <h2 class='mb-4 text-sm font-bold tracking-wider text-sky-700'>
          
         </h2>
-        <img
+        <Image
               src={post.data.thumbnail}
               alt={post.data.title}
               width={1024}

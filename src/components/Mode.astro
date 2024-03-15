@@ -64,7 +64,7 @@
       document.documentElement.classList.remove('dark');
     }
   
-    window.localStorage.setItem('theme', theme);
+    window.localStorage.setItem('theme', theme??'light');
   
     const ToggleMode = () => {
       const element = document.documentElement;

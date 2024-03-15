@@ -17,16 +17,19 @@
     </svg>
   </button>
   <style lang='scss'>
+    svg {
+        fill: none;
+    }
     #mode {
       border: 0;
       line-height: 1rem;
       background: none;
       color: inherit;
-      transition: 0.3s ease;
+    //   transition: 0.3s ease;
       padding: 0;
       &:hover {
         cursor: pointer;
-        rotate: 10deg;
+        // rotate: 10deg;
       }
     }
     .moon {
@@ -37,7 +40,7 @@
     }
     html.dark {
       .moon {
-        stroke: currentColor;
+        stroke: aliceblue;
       }
       .sun {
         stroke: transparent;

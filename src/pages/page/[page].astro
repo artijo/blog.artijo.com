@@ -32,7 +32,7 @@ const { page }: { page: Page } = Astro.props;
 ---
 
 <Layout title=`หน้า ${page.currentPage} | ARTIJO • BLOG - บันทึกของไอ้อาร์ต`>
-    <h2 class="text-3xl font-bold text-center pb-[16px]">หน้า {page.currentPage}</h2>
+    <h2 class="text-3xl font-bold text-center pb-[16px] dark:text-slate-100">หน้า {page.currentPage}</h2>
 <div class="px-[16px] mx-auto grid  max-w-[1120px] grid-cols-1 gap-4 md:grid-cols-2 md:gap-5 lg:grid-cols-3">
     {page.data.map((post: any) => (
               <Card slug={post.slug} feature_image={post.data.thumbnail} title={post.data.title} />

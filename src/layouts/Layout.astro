@@ -49,10 +49,30 @@ const {
 		<meta name="google-site-verification" content="3EHPc2mN0TiOKbyCWqJiXQDwuuhQchyiT-OMceoKRng">
 	</head>
 	<body class="min-h-screen bg-slate-100 dark:bg-slate-950 antialiased relative">
+		<a href="#main" class="skip">Skip to main content</a>
 		<Header /> 
-		<main class="lg:pt-[100px] pt-[90px] md:pt-[120px] sm:px-[16px] pb-[125px] sm:pb-[90px]">
+		<main id="main" class="lg:pt-[100px] pt-[90px] md:pt-[120px] sm:px-[16px] pb-[125px] sm:pb-[90px]">
 			<slot />
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<style>
+	.skip {
+		position: absolute;
+		top: -40px;
+		left: 0;
+		padding: 10px 20px;
+		z-index: 100;
+	}
+	.skip:focus {
+		top: 0;
+	}
+	.skip:focus-visible {
+		top: -40px;
+	}
+	.skip:focus:not(:focus-visible) {
+		top: -40px;
+	}
+</style>

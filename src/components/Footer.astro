@@ -18,9 +18,8 @@
   </footer>
 
   <script>
-    const year = new Date().getFullYear;
     const contextElement = document.querySelector('#context');
     if (contextElement) {
-      contextElement.innerHTML = `&copy;${year} <a href='https://artijo.com/' target='_blank'>artijo.com ALL RIGHTS RESERVED.</a>`;
+      contextElement.innerHTML = `&copy;${new Date().getFullYear()} <a href='https://artijo.com/' target='_blank'>artijo.com ALL RIGHTS RESERVED.</a>`;
     }
   </script>

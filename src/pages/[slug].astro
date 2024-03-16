@@ -34,7 +34,7 @@ const date = new Date(post.data.posted)
           {post.data.title}
         </h2>
         <p class='text-base text-gray-600 dark:text-gray-400'>
-          {`${(date.getMonth() + 1).toString().padStart(2, '0')}/${date.getDate().toString().padStart(2, '0')}/${date.getFullYear()}`}
+          {`${date.getDate().toString().padStart(2, '0')}/${(date.getMonth() + 1).toString().padStart(2, '0')}/${date.getFullYear()}`}
         </p>
       </div>
     </div>

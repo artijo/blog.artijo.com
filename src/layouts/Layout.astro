@@ -7,13 +7,15 @@ interface Props {
 	description?: string;
 	url?: string;
 	image?: string;
+	seotitle?: string;
 }
 
 const { 
 	title="ARTIJO • BLOG - บันทึกของไอ้อาร์ต",
 	description="บันทึกเรื่องราว เทคโนโลยี ชีวิตประจำวัน บ่นไปเรื่อย หรือบันทึกที่อยากบันทึก ตามอารมณ์ของไอ้อาร์ต",
 	url="https://blog.artijo.com",
-	image="https://r2.artijo.com/2023/06/Cover-Social.webp"
+	image="https://r2.artijo.com/2023/06/Cover-Social.webp",
+	seotitle="ARTIJO • BLOG - บันทึกของไอ้อาร์ต"
  } = Astro.props;
 ---
 
@@ -35,7 +37,7 @@ const {
 		<meta property="og:type" content="website">
 		<meta property="og:locale" content="th_TH">
 		<meta property="og:site_name" content="ARTIJO • BLOG">
-		<meta property="og:title" content={title}>
+		<meta property="og:title" content={seotitle}>
 		<meta property="og:description" content={description}>
 		<meta property="og:url" content={url}>
 		<meta property="og:image" content={image}>
@@ -43,7 +45,7 @@ const {
 		<meta property="og:image:height" content="1080">
 		<meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:site" content="@artijo_">
-		<meta name="twitter:title" content={title}>
+		<meta name="twitter:title" content={seotitle}>
 		<meta name="twitter:description" content={description}>
 		<meta name="twitter:image" content={image}>
 		<meta name="google-site-verification" content="3EHPc2mN0TiOKbyCWqJiXQDwuuhQchyiT-OMceoKRng">

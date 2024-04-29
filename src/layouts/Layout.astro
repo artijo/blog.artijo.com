@@ -106,6 +106,12 @@ const {
 			<slot />
 		</main>
 		<Footer />
+		<script>
+    		const contextElement = document.querySelector('#context');
+    		if (contextElement) {
+      			contextElement.innerHTML = `&copy;${new Date().getFullYear()} <a href='https://artijo.com/' target='_blank'>artijo.com </a>ALL RIGHTS RESERVED.`;
+    		}
+  </script>
 	</body>
 </html>
 

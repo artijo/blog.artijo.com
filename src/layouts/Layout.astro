@@ -26,6 +26,25 @@ const {
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<title>{title}</title>
+		<script defer>
+			const theme = (() => {
+      if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+        return localStorage.getItem('theme');
+      }
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark';
+      }
+      return 'light';
+    })();
+  
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  
+    window.localStorage.setItem('theme', theme??'light');
+		</script>
 		<link rel="stylesheet" href="/fonts/LineSeed/font.css">
 		<link rel="stylesheet" href="/fonts/chulabhornlikit/font.css">
 		<script src="/js/instant.js" type="module" lang="js" defer></script>

@@ -5,7 +5,7 @@ const ToggleMode = () => {
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
   };
 
-  (document.getElementById('mode')).addEventListener('click', ToggleMode);
+  document.getElementById('mode').addEventListener('click', ToggleMode);
   document.addEventListener(
   'click',
   function (e) {

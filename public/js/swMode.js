@@ -12,7 +12,7 @@ const ToggleMode = () => {
     if (e.target.closest('#navtoggle')) {
       document.body.classList.toggle('nav-open');
     }
-    if ((e.target).closest('nav a')) {
+    if (e.target.closest('nav a')) {
       document.body.classList.remove('nav-open');
     }
   },

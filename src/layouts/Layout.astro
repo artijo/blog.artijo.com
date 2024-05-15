@@ -1,7 +1,6 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { ViewTransitions } from 'astro:transitions';
 import '../styles/base.css';
 interface Props {
 	title?: string;
@@ -55,11 +54,9 @@ const {
 	<body class="min-h-screen bg-slate-100 dark:bg-slate-950 antialiased relative">
 		<a href="#main" class="skip">Skip to main content</a>
 		<Header /> 
-		<ViewTransitions >
 		<main id="main" class="lg:pt-[100px] pt-[90px] md:pt-[120px] sm:px-[16px] pb-[125px] sm:pb-[90px]">
 			<slot />
 		</main>
-		</ViewTransitions>
 		<Footer />
 		<script defer src="/js/swMode.js"></script>
 	</body>

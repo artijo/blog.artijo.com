@@ -18,3 +18,13 @@ const ToggleMode = () => {
   },
   false
 );
+
+if (
+  localStorage.theme === "dark" ||
+  (!("theme" in localStorage) &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches)
+) {
+  document.querySelector('meta[name="theme-color"]').setAttribute("content", "#020617");
+} else {
+  document.querySelector('meta[name="theme-color"]').setAttribute("content", "#F1F5F9");
+}
